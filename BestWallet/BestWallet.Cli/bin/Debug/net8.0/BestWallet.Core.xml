@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>BestWallet.Core</name></assembly>
+<members>
+<member name="M:BestWallet.Core.Calculator.sharpeRatio(Microsoft.FSharp.Collections.FSharpList{System.Double})">
+<summary>
+ Computes the Sharpe Ratio for a portfolio.
+
+ Parameters:
+  - dailyReturnsValue: A list of daily portfolio returns
+
+ Returns:
+  - The annualized Sharpe Ratio (assumes risk-free rate is 0)
+</summary>
+</member>
+<member name="M:BestWallet.Core.Calculator.standardDeviation(Microsoft.FSharp.Collections.FSharpList{System.Double})">
+<summary>
+ Computes the standard deviation (volatility) of daily returns.
+
+ Parameters:
+  - dailyReturns: A list of daily portfolio returns
+
+ Returns:
+  - The standard deviation (volatility) of the input returns
+</summary>
+</member>
+<member name="M:BestWallet.Core.Calculator.annualizedAverageReturn(Microsoft.FSharp.Collections.FSharpList{System.Double})">
+<summary>
+ Computes the annualized average return for a portfolio.
+
+ Parameters:
+  - walletDailyReturnsValue: Daily returns of the portfolio
+
+ Returns:
+  - Annualized average return based on 252 trading days
+</summary>
+</member>
+<member name="M:BestWallet.Core.Calculator.walletDailyReturns(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Collections.FSharpList{System.Double}},Microsoft.FSharp.Collections.FSharpList{System.Double})">
+<summary>
+ Computes the portfolio’s return for each day, given weights.
+
+ Parameters:
+  - dailyReturnsTransposed: Daily returns for all stocks, grouped by day
+  - weights: Portfolio weights for each stock
+
+ Returns:
+  - A list of daily portfolio returns
+</summary>
+</member>
+<member name="M:BestWallet.Core.Calculator.walletDailyReturn(Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.Double,System.Double}})">
+<summary>
+ Computes the total return of a portfolio on a single day.
+
+ Parameters:
+  - dailyReturnWithWeights: A list of (weight, return) tuples for each stock
+
+ Returns:
+  - The weighted return for the portfolio that day
+</summary>
+</member>
+<member name="M:BestWallet.Core.Calculator.transposeStockXDays(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Collections.FSharpList{System.Double}})">
+<summary>
+ Transposes a list-of-lists of stock × day returns into day × stock format.
+
+ Parameters:
+  - dailyReturns: Each sublist is the return series for a single stock
+
+ Returns:
+  - A list of lists where each sublist represents returns of all stocks on a given day
+</summary>
+</member>
+<member name="M:BestWallet.Core.Calculator.allDailyReturns(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Collections.FSharpList{System.Double}})">
+<summary>
+ Applies dailyReturns to each stock’s price history in a portfolio.
+
+ Parameters:
+  - prices: A list of price lists (one per stock)
+
+ Returns:
+  - A list of daily return lists (one per stock)
+</summary>
+</member>
+<member name="M:BestWallet.Core.Calculator.dailyReturns(Microsoft.FSharp.Collections.FSharpList{System.Double})">
+<summary>
+ Computes the daily returns for a list of close prices.
+
+ Parameters:
+  - prices: List of sequential close prices
+
+ Returns:
+  - A list of daily returns for each pair of consecutive days
+</summary>
+</member>
+<member name="M:BestWallet.Core.Calculator.dailyReturn(System.Double,System.Double)">
+<summary>
+ Computes the daily return given two consecutive close prices of a stock.
+ 
+ Formula: (price on day T / price on day T-1) - 1
+
+ Parameters:
+  - priceTminOne: The closing price of the previous day
+  - priceT: The closing price of the current day
+
+ Returns:
+  - The relative daily return as a float (e.g., 0.02 means +2%)
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,14 @@
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/bin/Debug/net8.0/BestWallet.Core.deps.json
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/bin/Debug/net8.0/BestWallet.Core.dll
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/bin/Debug/net8.0/BestWallet.Core.pdb
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/bin/Debug/net8.0/BestWallet.Core.xml
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/BestWallet.Core.fsproj.AssemblyReference.cache
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/BestWallet.Core.AssemblyInfoInputs.cache
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/BestWallet.Core.AssemblyInfo.fs
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/BestWallet.Core.fsproj.CoreCompileInputs.cache
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/BestWallet.Core.sourcelink.json
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/BestWallet.Core.dll
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/refint/BestWallet.Core.dll
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/BestWallet.Core.xml
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/BestWallet.Core.pdb
+/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/obj/Debug/net8.0/ref/BestWallet.Core.dll

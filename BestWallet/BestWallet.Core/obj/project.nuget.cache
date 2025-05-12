@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hkrVFxlS4nyiVgOuU1efg0KthF0XhFWEBsfDjABnXUgnT8DeFZwFcFAjSGIwdQWOoi4qaenX1kUwYCYevo2s3Q==",
+  "success": true,
+  "projectFilePath": "/home/eduardo/Desktop/progfunc/funcdotdent/BestWallet/BestWallet.Core/BestWallet.Core.fsproj",
+  "expectedPackageFiles": [
+    "/home/eduardo/.nuget/packages/fsharp.core/8.0.102/fsharp.core.8.0.102.nupkg.sha512"
+  ],
+  "logs": []
+}
