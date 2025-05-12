@@ -5,45 +5,46 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using BestWallet.Core;
-using Microsoft.FSharp.Collections;
 
 class Program
 {
     static void Main(string[] args)
     {
+
         string folder = "dow_data/2024-08-01_to_2024-12-31";
         var (stocks, prices) = DataLoader.ReadWithStocks(folder);
-        var fsharpDailyReturns = Calculator.allDailyReturns(ToFSharpListOfLists(prices));
-        var dailyReturns = fsharpDailyReturns
-        .Select(sub => sub.ToList().Select(x => (float)x).ToList())
-        .ToList();
 
-        var combinations = Simulate.generateWalletCombinations(25, ListModule.OfSeq(stocks)).ToList();
+        double[][] priceMatrix = prices
+            .Select(row => row.Select(x => (double)x).ToArray())
+            .ToArray();
 
-        Console.WriteLine($"🔄 Evaluating {combinations.Count} combinations × 1000 weights each...");
+        double[][] dailyReturns = CalculatorArray.allDailyReturns(priceMatrix);
+        double[][] dailyReturnsTransposed = CalculatorArray.transposeStockXDays(dailyReturns);
 
-        object locker = new();
+        var combinations = SimulateArray.generateWalletCombinations(
+            25,
+            Microsoft.FSharp.Collections.ListModule.OfSeq(stocks)
+        ).Select(fsharpList => fsharpList.ToList()).ToList();
+
+        Console.WriteLine($"🔄 Evaluating {combinations.Count} combinations × 30 weights each...");
+
         double globalBestSharpe = double.NegativeInfinity;
         List<string> globalBestStocks = null;
-        List<double> globalBestWeights = null;
+        double[] globalBestWeights = null;
 
         var sw = Stopwatch.StartNew();
 
         foreach (var combo in combinations)
         {
-            var (bestSharpe, bestWeights) = BestSharpeForCombination(combo.ToList(), stocks, dailyReturns);
+            var (sharpe, weights) = BestSharpeForCombination(combo.ToList(), stocks, dailyReturnsTransposed);
 
-            lock (locker)
+            if (sharpe > globalBestSharpe)
             {
-                if (bestSharpe > globalBestSharpe)
-                {
-                    globalBestSharpe = bestSharpe;
-                    globalBestStocks = combo.ToList();
-                    globalBestWeights = bestWeights;
-                }
+                globalBestSharpe = sharpe;
+                globalBestStocks = combo.ToList();
+                globalBestWeights = weights;
             }
         }
-
 
         sw.Stop();
 
@@ -56,25 +57,25 @@ class Program
         Console.WriteLine($"\n⏱️ Completed in {sw.Elapsed.TotalSeconds:F2} seconds");
     }
 
-    static (double sharpe, List<double> weights) BestSharpeForCombination(
+    static (double sharpe, double[] weights) BestSharpeForCombination(
         List<string> combo,
         List<string> allTickers,
-        List<List<float>> dailyReturns)
+        double[][] dailyReturnsTransposed)
     {
-        var indices = combo.Select(t => allTickers.IndexOf(t)).ToList();
-        var comboReturns = indices.Select(i => dailyReturns[i]).ToList();
-        var fsharpReturns = ToFSharpListOfLists(comboReturns);
-        var transposed = Calculator.transposeStockXDays(fsharpReturns);
+        var indices = combo.Select(t => allTickers.IndexOf(t)).ToArray();
+        var selectedReturns = dailyReturnsTransposed
+            .Select(dayReturns => indices.Select(i => dayReturns[i]).ToArray())
+            .ToArray();
 
-        object locker = new();
         double bestSharpe = double.NegativeInfinity;
-        List<double> bestWeights = null;
+        double[] bestWeights = null;
+        object locker = new();
 
         Parallel.For(0, 30, i =>
         {
-            var weights = Simulate.generateWeights(combo.Count).Select(Convert.ToDouble).ToList();
-            var walletReturns = Calculator.walletDailyReturns(transposed, ListModule.OfSeq(weights));
-            var sharpe = Calculator.sharpeRatio(walletReturns);
+            var weights = SimulateArray.generateWeights(combo.Count);
+            var walletReturns = CalculatorArray.walletDailyReturns(selectedReturns, weights);
+            var sharpe = CalculatorArray.sharpeRatio(walletReturns);
 
             lock (locker)
             {
@@ -87,13 +88,5 @@ class Program
         });
 
         return (bestSharpe, bestWeights);
-    }
-
-
-    static FSharpList<FSharpList<double>> ToFSharpListOfLists<T>(List<List<T>> lists)
-    {
-        return ListModule.OfSeq(
-            lists.Select(sub => ListModule.OfSeq(sub.Select(x => Convert.ToDouble(x))))
-        );
     }
 }

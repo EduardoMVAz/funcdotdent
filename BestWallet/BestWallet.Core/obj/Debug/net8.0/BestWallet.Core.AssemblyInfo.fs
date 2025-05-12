@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("BestWallet.Core")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6747fd109848ed2cb7de14da5ea8dc527138c83")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42ea8d9ce3f4d9ea8d6e6fe3ff9141e0058733db")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("BestWallet.Core")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("BestWallet.Core")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

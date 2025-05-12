@@ -105,5 +105,60 @@
   - The relative daily return as a float (e.g., 0.02 means +2%)
 </summary>
 </member>
+<member name="M:BestWallet.Core.CalculatorArray.sharpeRatio(System.Double[])">
+<summary>
+ Computes the Sharpe ratio using annualized return and volatility.
+</summary>
+</member>
+<member name="M:BestWallet.Core.CalculatorArray.standardDeviation(System.Double[])">
+<summary>
+ Computes the standard deviation (volatility) of daily returns.
+</summary>
+</member>
+<member name="M:BestWallet.Core.CalculatorArray.annualizedAverageReturn(System.Double[])">
+<summary>
+ Computes the annualized average return from daily returns.
+</summary>
+</member>
+<member name="M:BestWallet.Core.CalculatorArray.walletDailyReturns(System.Double[][],System.Double[])">
+<summary>
+ Computes the daily returns of the portfolio over time.
+</summary>
+</member>
+<member name="M:BestWallet.Core.CalculatorArray.walletDailyReturn(System.Double[],System.Double[])">
+<summary>
+ Computes the weighted return of a portfolio for a single day.
+</summary>
+</member>
+<member name="M:BestWallet.Core.CalculatorArray.transposeStockXDays(System.Double[][])">
+<summary>
+ Transposes a 2D matrix (stock × day) into (day × stock).
+</summary>
+</member>
+<member name="M:BestWallet.Core.CalculatorArray.allDailyReturns(System.Double[][])">
+<summary>
+ Applies dailyReturns to each stock’s price history.
+</summary>
+</member>
+<member name="M:BestWallet.Core.CalculatorArray.dailyReturns(System.Double[])">
+<summary>
+ Computes daily returns from a sequence of close prices.
+</summary>
+</member>
+<member name="M:BestWallet.Core.CalculatorArray.dailyReturn(System.Double,System.Double)">
+<summary>
+ Computes the daily return given two consecutive close prices.
+</summary>
+</member>
+<member name="M:BestWallet.Core.SimulateArray.generateWeights(System.Int32)">
+<summary>
+ Generates a normalized random weight vector of length k.
+</summary>
+</member>
+<member name="M:BestWallet.Core.SimulateArray.generateWalletCombinations(System.Int32,Microsoft.FSharp.Collections.FSharpList{System.String})">
+<summary>
+ Recursively generates all combinations of k elements from a list.
+</summary>
+</member>
 </members>
 </doc>
