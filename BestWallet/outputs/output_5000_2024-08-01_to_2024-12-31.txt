@@ -1,0 +1,2 @@
+Analyzing data from 2024-08-01 to 2024-12-31
+Evaluating 142506 combinations x 5000 weights each.

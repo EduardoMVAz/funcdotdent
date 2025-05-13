@@ -1,0 +1,31 @@
+Analyzing data from 2025-01-01 to 2025-03-31
+Evaluating 142506 combinations x 1000 weights each.
+
+Best Sharpe Ratio: 3.6283
+• AMGN: 9.80%
+• BA: 3.31%
+• CRM: 1.32%
+• CSCO: 3.26%
+• CVX: 4.76%
+• DIS: 0.77%
+• GS: 1.13%
+• HD: 2.80%
+• HON: 1.00%
+• IBM: 2.80%
+• INTC: 0.92%
+• JNJ: 9.67%
+• JPM: 5.60%
+• KO: 6.15%
+• MCD: 0.05%
+• MMM: 9.41%
+• MRK: 3.28%
+• MSFT: 1.31%
+• NKE: 0.15%
+• TRV: 2.26%
+• V: 5.69%
+• VZ: 7.23%
+• WBA: 7.69%
+• WMT: 0.46%
+• XOM: 9.16%
+
+Completed in 638.95 seconds

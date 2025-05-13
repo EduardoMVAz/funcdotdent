@@ -1,0 +1,31 @@
+Analyzing data from 2024-08-01 to 2024-12-31
+Evaluating 142506 combinations x 1000 weights each.
+
+Best Sharpe Ratio: 2.9420
+• AAPL: 8.01%
+• AXP: 4.61%
+• BA: 2.35%
+• CRM: 9.36%
+• CSCO: 7.43%
+• CVX: 2.91%
+• DIS: 8.61%
+• GS: 1.02%
+• HD: 0.37%
+• HON: 6.33%
+• IBM: 3.28%
+• JPM: 2.06%
+• KO: 0.36%
+• MCD: 2.79%
+• MMM: 0.26%
+• MRK: 4.20%
+• MSFT: 4.88%
+• NKE: 1.85%
+• PG: 6.69%
+• TRV: 2.60%
+• UNH: 1.31%
+• V: 5.03%
+• VZ: 3.97%
+• WBA: 0.43%
+• WMT: 9.29%
+
+Completed in 881.07 seconds
