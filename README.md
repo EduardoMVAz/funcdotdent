@@ -96,19 +96,20 @@ Now, simply run the project passing the arguments to your desire:
 
 Several experiments were conducted using different scenarios for comparision. The following is a table with the information of the performance examples (all done in data from 2024-08-01 -> 2024-12-31):
 
-| Number of Weight Vector | Sharpe Obtained  | Time           |
-|-------------------------|------------------|----------------|
-| 10                      | 2.8656           | 14.11 seconds  |
-| 50                      | 2.8168           | 50.13 seconds  |
-| 100                     | 2.8698           | 91.83 seconds  |
-| 250                     | 2.9410           | 227.31 seconds |
-| 500                     | 2.9271           | 405.59 seconds |
-| 750                     | 2.9806           | 591.99 seconds |
-| 1000                    | 2.9420           | 881.07 seconds |
-| 1000                    | 3.0569           | 798.17 seconds |
-| 1000                    | 3.1754           | 817.64 seconds |
-| 1000                    | 2.9837           | 809.81 seconds |
-| 1000                    | 3.1049           | 810.98 seconds |
+| Number of Weight Vector | Sharpe Obtained  | Time            |
+|-------------------------|------------------|-----------------|
+| 10                      | 2.8656           | 14.11 seconds   |
+| 50                      | 2.8168           | 50.13 seconds   |
+| 100                     | 2.8698           | 91.83 seconds   |
+| 250                     | 2.9410           | 227.31 seconds  |
+| 500                     | 2.9271           | 405.59 seconds  |
+| 750                     | 2.9806           | 591.99 seconds  |
+| 1000                    | 2.9420           | 881.07 seconds  |
+| 1000                    | 3.0569           | 798.17 seconds  |
+| 1000                    | 3.1754           | 817.64 seconds  |
+| 1000                    | 2.9837           | 809.81 seconds  |
+| 1000                    | 3.1049           | 810.98 seconds  |
+| 5000                    | 3.1206           | 5660.10 seconds |
 
 And the following is an experiment done with data **from the first semester of 2025** (2025-01-01 -> 2025-03-31):
 
